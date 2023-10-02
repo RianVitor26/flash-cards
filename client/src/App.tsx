@@ -6,6 +6,7 @@ import {
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { Home } from "./pages/Home";
+import { DeckDetail } from "./pages/DeckDetail";
 
 const router = createBrowserRouter([
   {
@@ -13,12 +14,16 @@ const router = createBrowserRouter([
     element: <SignIn/>,
   },
   {
-    path: "/home",
+    path: "/decks",
     element: <Home/>,
   },
   {
     path: "/signup",
     element: <SignUp/>,
+  },
+  {
+    path: "/decks/id", // Test
+    element: <DeckDetail/>,
   },
 ]);
 
