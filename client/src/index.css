@@ -5,3 +5,28 @@
 *{
     font-family: 'Raleway';
 }
+
+.card {
+    perspective: 1000px; 
+    transform-style: preserve-3d;
+    transition: all .8s;
+}
+
+.card div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
