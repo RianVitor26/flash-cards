@@ -1,8 +1,15 @@
+import React from 'react';
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
-export const Plus = () => {
-  return (
-    <div className="w-52 h-40 bg-emerald-500/50">
-
-    </div>
-  )
+interface PlusProps {
+  action: () => void;
 }
+
+export const Plus: React.FC<PlusProps> = ({ action }) => {
+  return (
+    <div onClick={action} className="w-52 h-40 flex justify-center items-center text-7xl text-emerald-500 rounded-md cursor-pointer hover:text-emerald-400 transition-all duration-500 bg-emerald-500/10">
+      <AiOutlinePlusCircle/>
+    </div>
+  );
+}
+
