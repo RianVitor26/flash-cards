@@ -5,7 +5,7 @@ export const SignUp = () => {
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <span className="text-center text-2xl text-purple-500 font-black">Register</span>
+            <span className="text-center text-2xl text-rose-500 font-black">Register</span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-400">
               Cadastrar uma conta
             </h2>
@@ -24,7 +24,7 @@ export const SignUp = () => {
                     type="text"
                     autoComplete="nome"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -39,7 +39,7 @@ export const SignUp = () => {
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -57,7 +57,7 @@ export const SignUp = () => {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -65,7 +65,7 @@ export const SignUp = () => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-purple-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500"
+                  className="flex w-full justify-center rounded-md bg-rose-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
                 >
                   Cadastrar
                 </button>
@@ -74,7 +74,7 @@ export const SignUp = () => {
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Já possui uma conta?{' '}
-              <Link to="/" className="font-semibold leading-6 text-purple-500 hover:text-purple-500">
+              <Link to="/" className="font-semibold leading-6 text-rose-500 hover:text-rose-500">
                 Faça login aqui
               </Link>
             </p>

@@ -1,9 +1,13 @@
 import { Deck } from "../components/Deck"
+import { Header } from "../components/Header"
 
 export const Home = () => {
   return (
-    <div className="w-11/12 mx-auto h-screen gap-5 flex-wrap">
+    <>
+    <Header/>
+    <main className="w-11/12 flex justify-center sm:justify-start mx-auto h-screen gap-5 flex-wrap">
         <Deck/>
-    </div>
+    </main>
+    </>
   )
 }

@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: <SignUp/>,
   },
   {
-    path: "/decks/id", // Test
+    path: "/decks/id",
     element: <DeckDetail/>,
   },
 ]);

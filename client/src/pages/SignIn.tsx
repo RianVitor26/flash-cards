@@ -5,7 +5,7 @@ export const SignIn = () => {
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <span className="text-center text-2xl text-purple-500 font-black">SignIn</span>
+            <span className="text-center text-2xl text-rose-500 font-black">SignIn</span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-400">
               Entre na sua conta
             </h2>
@@ -24,7 +24,7 @@ export const SignIn = () => {
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -35,7 +35,7 @@ export const SignIn = () => {
                     Senha
                   </label>
                   <div className="text-sm">
-                    <a href="#" className="font-semibold text-purple-500 hover:text-purple-500">
+                    <a href="#" className="font-semibold text-rose-500 hover:text-rose-500">
                       Esqueçeu a senha?
                     </a>
                   </div>
@@ -47,7 +47,7 @@ export const SignIn = () => {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -55,7 +55,7 @@ export const SignIn = () => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-purple-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500"
+                  className="flex w-full justify-center rounded-md bg-rose-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
                 >
                   Entrar
                 </button>
@@ -64,7 +64,7 @@ export const SignIn = () => {
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Não possui uma conta?{' '}
-              <Link to="/signup" className="font-semibold leading-6 text-purple-500 hover:text-purple-500">
+              <Link to="/signup" className="font-semibold leading-6 text-rose-500 hover:text-rose-500">
                 Cadastre-se aqui
               </Link>
             </p>

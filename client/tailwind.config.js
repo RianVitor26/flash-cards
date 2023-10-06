@@ -9,6 +9,14 @@ export default {
       '180': '180deg',
     },
   },
+  theme: {
+    extend: {
+      backgroundImage: {
+        'header': "url('/header.jpg')",
+        'male-profile': "url('/male_profile.svg')",
+      }
+    }
+  },
   plugins: [],
 }
 
