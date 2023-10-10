@@ -8,6 +8,8 @@
 UNDER DEVELOPMENT... <br>
 Flash card project for memorizing English terms with spaced learning.
 
+Back end repository link: [Flash Card API](https://github.com/RianVitor26/flash-card-api)
+
 ## Technologies 💻
 * [React](https://pt-br.legacy.reactjs.org/)
 * [TailwindCSS](https://tailwindcss.com/)
