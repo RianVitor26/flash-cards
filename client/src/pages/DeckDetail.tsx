@@ -1,4 +1,5 @@
 import { Card } from "../components/Card"
+import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { Modal } from "../components/Modal"
 
@@ -13,6 +14,7 @@ export const DeckDetail = () => {
       <Card />
       <Card />
       </main>
+      <Footer/>
     </>
   )
 }
