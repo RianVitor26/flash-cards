@@ -1,14 +1,18 @@
 import { Card } from "../components/Card"
+import { Header } from "../components/Header"
 import { Modal } from "../components/Modal"
 
 export const DeckDetail = () => {
   return (
-    <div className="w-11/12 pt-5 flex justify-center mx-auto gap-5 flex-wrap">
+    <>
+      <Header/>
+      <main className="w-11/12 flex justify-center sm:justify-start mx-auto h-screen gap-x-3 flex-wrap">
       <Modal/>
       <Card />
       <Card />
       <Card />
       <Card />
-    </div>
+      </main>
+    </>
   )
 }
