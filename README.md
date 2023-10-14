@@ -1,4 +1,4 @@
-# flash-card
+# Flash Cards
 
 <p align="center">
 <img src="https://images.unsplash.com/photo-1663789049904-a1e1e216c829?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80">
@@ -6,9 +6,9 @@
 
 ## Description 🎮
 UNDER DEVELOPMENT... <br>
-Flash card project for memorizing English terms with spaced learning.
+Flash cards project for memorizing English terms with spaced learning.
 
-Back end repository link: [Flash Card API](https://github.com/RianVitor26/flash-card-api)
+Back end repository link: [Flash Cards API](https://github.com/RianVitor26/flash-cards-api)
 
 ## Technologies 💻
 * [React](https://pt-br.legacy.reactjs.org/)
@@ -42,7 +42,7 @@ $ pnpm test
 <img src="https://avatars.githubusercontent.com/u/77061521?v=4" width=115>
 
 ## License 🛡️
-The [MIT License](https://github.com/RianVitor26/flash-card/blob/main/LICENSE) (MIT)
+The [MIT License](https://github.com/RianVitor26/flash-cards/blob/main/LICENSE) (MIT)
 
-Copyright :copyright: 2023 - Flash Card
+Copyright :copyright: 2023 - Flash Cards
 
