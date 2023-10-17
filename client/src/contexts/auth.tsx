@@ -6,7 +6,7 @@ export interface IAuthProps {
     login: (email: string, password: string) => void;
 }
 
-interface IAuthProviderProps {
+export interface IAuthProviderProps {
     children: ReactNode;
 }
 
