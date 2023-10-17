@@ -1,6 +1,10 @@
 import { createContext } from "react";
 import { IUserProps } from "../interfaces/userProps";
 
+export interface IAuthProps {
+    login: (email: string, password: string) => void;
+  }
+
 type IAuthContextProps = {
     isAuthenticated: boolean;
     user: IUserProps | null; 
@@ -8,4 +12,4 @@ type IAuthContextProps = {
     logout: () => void;
 }
 
-export const AuthContext = createContext<IAuthContextProps | undefined>({} as IAuthContextProps)
+export const AuthContext = createContext<IAuthContextProps>({} as IAuthContextProps)
