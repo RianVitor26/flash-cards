@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/auth"
 
 export const SignIn = () => {
 
-  const { login } = useContext(AuthContext)
+  const { login, isAuthenticated } = useContext(AuthContext)
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -25,6 +25,8 @@ export const SignIn = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+          <p>{String(isAuthenticated)}</p>
           <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">

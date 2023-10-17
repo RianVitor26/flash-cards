@@ -12,29 +12,42 @@ import { AuthProvider } from "./contexts/auth";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SignIn />,
+    element: (
+      <AuthProvider>
+        <SignIn />
+      </AuthProvider>
+    ),
   },
   {
     path: "/decks",
-    element: <Home />,
+    element: (
+      <AuthProvider>
+        <Home />
+      </AuthProvider>
+    ),
   },
   {
     path: "/signup",
-    element: <SignUp />,
+    element: (
+      <AuthProvider>
+        <SignUp />
+      </AuthProvider>
+    ),
   },
   {
     path: "/decks/id",
-    element: <DeckDetail />,
+    element: (
+     <AuthProvider>
+       <DeckDetail />
+     </AuthProvider>
+    ),
   },
 ]);
 
 function App() {
 
   return (
-    <AuthProvider>
       <RouterProvider router={router} />
-    </AuthProvider>
-
   )
 }
 
