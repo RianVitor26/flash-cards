@@ -10,7 +10,7 @@ import { DeckDetail } from "./pages/DeckDetail";
 
 import { AuthContext } from "./contexts/auth";
 import { useState } from "react";
-import { IUserProps } from "./interfaces/userInterface";
+import { IUserProps } from "./interfaces/userProps";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [user, setUser] = useState<IUserProps | null>(null)
+  const [user, setUser] = useState<IUserProps | null>(null);
 
   const login = (email: string, password: string): void => {
     console.log("login:", { email, password });
