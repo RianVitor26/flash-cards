@@ -7,10 +7,7 @@ import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { Home } from "./pages/Home";
 import { DeckDetail } from "./pages/DeckDetail";
-
-import { AuthContext } from "./contexts/auth";
-import { useState } from "react";
-import { IUserProps } from "./interfaces/userProps";
+import { AuthProvider } from "./contexts/auth";
 
 const router = createBrowserRouter([
   {
@@ -32,20 +29,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [user, setUser] = useState<IUserProps | null>(null);
-
-  const login = (email: string, password: string): void => {
-    console.log("login:", { email, password });
-    const user: IUserProps = { id: 1, email };
-    setUser(user);
-  };
-
-  const logout = () => { }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated: !!user, user, login, logout }}>
+    <AuthProvider>
       <RouterProvider router={router} />
-    </AuthContext.Provider>
+    </AuthProvider>
+
   )
 }
 
