@@ -8,7 +8,8 @@ import { SignUp } from "./pages/SignUp";
 import { Home } from "./pages/Home";
 import { DeckDetail } from "./pages/DeckDetail";
 import { AuthProvider } from "./contexts/auth";
-import { Private } from "./utils/Private";
+import { PrivateRoute } from "./utils/PrivateRoute";
+
 
 const router = createBrowserRouter([
   {
@@ -23,9 +24,9 @@ const router = createBrowserRouter([
     path: "/decks",
     element: (
       <AuthProvider>
-        <Private>
+        <PrivateRoute>
           <Home />
-        </Private>
+        </PrivateRoute>
       </AuthProvider>
     ),
   },
@@ -41,16 +42,13 @@ const router = createBrowserRouter([
     path: "/decks/id",
     element: (
       <AuthProvider>
-        <Private>
+        <PrivateRoute>
           <DeckDetail />
-        </Private>
+        </PrivateRoute>
       </AuthProvider>
     ),
   },
 ]);
-
-
-
 
 function App() {
 
