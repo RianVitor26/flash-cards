@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { FormEventHandler, useContext, useEffect, useState } from "react"
 import { AuthContext } from "../contexts/auth"
-import { getAllUsers } from "../services/api"
+import { getAllUsers } from "../services/users"
 import { IUserProps } from "../interfaces/userProps"
 
 export const SignIn = () => {
