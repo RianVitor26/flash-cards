@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
-import { FormEventHandler, useContext, useEffect, useState } from "react"
+import { FormEventHandler, useContext, useState } from "react"
 import { AuthContext } from "../contexts/auth"
-import { getAllUsers } from "../services/users"
-import { IUserProps } from "../interfaces/userProps"
 
 export const SignIn = () => {
 
@@ -10,28 +8,11 @@ export const SignIn = () => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [users, setUsers] = useState<IUserProps[]>([])
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event): void => {
     event.preventDefault();
     login(email, password)
   };
-
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const usersList = await getAllUsers();
-        setUsers(usersList);
-      } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
-
-  console.log(users);
 
   return (
     <>

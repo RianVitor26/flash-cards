@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useState } from "react";
 import { IUserProps } from "../interfaces/userProps";
 import { useNavigate } from "react-router-dom";
+import { createSession } from "../services/users";
 
 export interface IAuthProps {
     login: (email: string, password: string) => void;
@@ -25,10 +26,18 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
 
     const [user, setUser] = useState<IUserProps | null>(null);
 
-    const login = (email: string, password: string): void => {
-        console.log("login:", { email, password });
-        if (password === 'secret') {
-            const user: IUserProps = { id: 1, email };
+    const login = async (email: string, password: string) => {
+
+        const { data } = await createSession(email, password)
+
+        if (data && data.token) {
+            const user: IUserProps = {
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                token: data.token
+            };
+            localStorage.setItem('token', JSON.stringify(data.token))
             setUser(user);
             navigate("/decks")
         }
