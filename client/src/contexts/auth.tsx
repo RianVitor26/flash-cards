@@ -1,7 +1,8 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { IUserProps } from "../interfaces/userProps";
 import { useNavigate } from "react-router-dom";
 import { createSession } from "../services/users";
+import { api } from "../services/config";
 
 export interface IAuthProps {
     login: (email: string, password: string) => void;
@@ -21,13 +22,20 @@ type IAuthContextProps = {
 export const AuthContext = createContext<IAuthContextProps>({} as IAuthContextProps)
 
 export const AuthProvider = ({ children }: IAuthProviderProps) => {
-
     const navigate = useNavigate()
-
     const [user, setUser] = useState<IUserProps | null>(null);
 
-    const login = async (email: string, password: string) => {
+    useEffect(() => {
+        const user = localStorage.getItem('user')
+        const token = localStorage.getItem('token')
 
+        if (user && token) {
+            setUser(JSON.parse(user));
+            api.defaults.headers.common['Authorization'] = token;
+        }
+    }, [])
+
+    const login = async (email: string, password: string) => {
         const { data } = await createSession(email, password)
 
         if (data) {
@@ -37,16 +45,18 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
                 email: data.email,
                 token: data.token
             };
+            setUser(user);
             localStorage.setItem('token', JSON.stringify(data.token))
             localStorage.setItem('user', JSON.stringify(user))
-            setUser(user);
+            api.defaults.headers.common['Authorization'] = data.token;
             navigate("/decks")
         }
     };
 
-    const logout = () => { 
+    const logout = () => {
         setUser(null)
         localStorage.clear()
+        api.defaults.headers.common['Authorization'] = null;
     }
 
 
