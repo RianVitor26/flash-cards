@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
 
         const { data } = await createSession(email, password)
 
-        if (data && data.token) {
+        if (data) {
             const user: IUserProps = {
                 id: data.id,
                 name: data.name,
@@ -38,12 +38,16 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
                 token: data.token
             };
             localStorage.setItem('token', JSON.stringify(data.token))
+            localStorage.setItem('user', JSON.stringify(user))
             setUser(user);
             navigate("/decks")
         }
     };
 
-    const logout = () => { }
+    const logout = () => { 
+        setUser(null)
+        localStorage.clear()
+    }
 
 
     return (

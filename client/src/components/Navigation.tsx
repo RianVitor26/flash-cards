@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
+  Collapse,
   IconButton,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
@@ -70,11 +70,11 @@ export const Navigation = () => {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }
