@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/decks/id",
+    path: "/decks/:deckId/cards",
     element: (
       <AuthProvider>
         <PrivateRoute>

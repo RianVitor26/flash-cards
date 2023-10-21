@@ -11,7 +11,7 @@ export const DeckDetail = () => {
       <Header/>
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto h-screen gap-x-3 flex-wrap">
       <Modal/>
-      <Card />
+      <Card term="Ball" translation="Bola" />
       </main>
       <Footer/>
     </>

@@ -30,9 +30,9 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
         const token = localStorage.getItem('token')
 
         if (user && token) {
-            setUser(JSON.parse(user));
-            api.defaults.headers.common['Authorization'] = token;
-        }
+            setUser(JSON.parse(user))
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        }   
     }, [])
 
     const login = async (email: string, password: string) => {
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
             setUser(user);
             localStorage.setItem('token', JSON.stringify(data.token))
             localStorage.setItem('user', JSON.stringify(user))
-            api.defaults.headers.common['Authorization'] = data.token;
+            api.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
             navigate("/decks")
         }
     };
