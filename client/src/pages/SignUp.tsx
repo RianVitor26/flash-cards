@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEventHandler, useState } from "react";
 import { Link } from "react-router-dom";
-import { createUser } from "../services/users";
+import { createUser } from "../services/usersServices";
 
 export const SignUp = () => {
   const [user, setUser] = useState({

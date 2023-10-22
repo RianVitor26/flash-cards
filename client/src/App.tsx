@@ -5,9 +5,9 @@ import {
 
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
-import { Home } from "./pages/Home";
-import { DeckDetail } from "./pages/DeckDetail";
-import { AuthProvider } from "./contexts/auth";
+import { Decks } from "./pages/Decks";
+import { Cards } from "./pages/Cards";
+import { AuthProvider } from "./contexts/AuthContext";
 import { PrivateRoute } from "./utils/PrivateRoute";
 
 
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: (
       <AuthProvider>
         <PrivateRoute>
-          <Home />
+          <Decks />
         </PrivateRoute>
       </AuthProvider>
     ),
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     element: (
       <AuthProvider>
         <PrivateRoute>
-          <DeckDetail />
+          <Cards />
         </PrivateRoute>
       </AuthProvider>
     ),

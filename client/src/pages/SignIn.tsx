@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { FormEventHandler, useContext, useState } from "react"
-import { AuthContext } from "../contexts/auth"
+import { AuthContext } from "../contexts/AuthContext"
 
 export const SignIn = () => {
 

@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { IUserProps } from "../interfaces/userProps";
 import { useNavigate } from "react-router-dom";
-import { createSession } from "../services/users";
+import { createSession } from "../services/usersServices";
 import { api } from "../services/config";
 
 export interface IAuthProps {

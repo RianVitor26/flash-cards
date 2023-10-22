@@ -1,6 +1,6 @@
 export interface IDecksProps {
     id: number;
-    title: string;
+    name: string;
     description: string;
     category?: string;
 }

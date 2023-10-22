@@ -3,12 +3,13 @@ import { Deck } from "../components/Deck"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { Navigation } from "../components/Navigation"
-import { getAllDecks } from "../services/decks"
+import { findAllDecks } from "../services/decksService"
 import { IDecksProps } from "../interfaces/decksProps"
-import { AuthContext } from "../contexts/auth"
+import { AuthContext } from "../contexts/AuthContext"
 
-export const Home = () => {
+export const Decks = () => {
   const [decks, setDecks] = useState<IDecksProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const { user } = useContext(AuthContext)
 
@@ -17,11 +18,13 @@ export const Home = () => {
       try {
         if (user) {
           const userId = user.id;
-          const decksData = await getAllDecks(userId);
-          setDecks(decksData);
+          const decksList = await findAllDecks(userId);
+          setDecks(decksList);
         }
       } catch (error) {
         console.error("Erro ao buscar decks:", error);
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -32,11 +35,12 @@ export const Home = () => {
       <Navigation />
       <Header />
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-5 flex-wrap">
+        {isLoading ? <p>carregando...</p> : null}
         {decks.map((deck) => (
           <Deck
             key={deck.id}
             id={deck.id}
-            title={deck.title}
+            name={deck.name}
             description={deck.description}
           />
         ))}
