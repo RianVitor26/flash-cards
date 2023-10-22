@@ -9,7 +9,7 @@ import { AuthContext } from "../contexts/AuthContext"
 
 export const Decks = () => {
   const [decks, setDecks] = useState<IDecksProps[]>([]);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const { user } = useContext(AuthContext)
 
