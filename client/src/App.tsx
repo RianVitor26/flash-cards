@@ -9,6 +9,7 @@ import { Decks } from "./pages/Decks";
 import { Cards } from "./pages/Cards";
 import { AuthProvider } from "./contexts/AuthContext";
 import { PrivateRoute } from "./utils/PrivateRoute";
+import { Home } from "./pages/Home";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
     element: (
       <AuthProvider>
         <SignIn />
+      </AuthProvider>
+    ),
+  },
+  {
+    path: "/home",
+    element: (
+      <AuthProvider>
+        <Home />
       </AuthProvider>
     ),
   },

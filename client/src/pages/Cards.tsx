@@ -29,13 +29,13 @@ export const Cards = () => {
     }
 
     fetchCards();
-  }, [user, deckId]);
+  }, [user, deckId, cards]);
 
   return (
     <>
       <Navigation/>
       <Header/>
-      <main className="w-11/12 flex justify-center sm:justify-start mx-auto h-screen gap-x-3 flex-wrap">
+      <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-x-3 flex-wrap">
       <Modal/>
       {cards.map(card => (
         <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
