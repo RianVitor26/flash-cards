@@ -29,7 +29,7 @@ export const Decks = () => {
     }
 
     fetchDecks();
-  }, [user]);
+  }, [user, decks]);
   return (
     <>
       <Navigation />

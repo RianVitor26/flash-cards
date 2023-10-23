@@ -10,10 +10,10 @@ import { ICardsProps } from "../interfaces/cardsProps"
 import { findAllCards } from "../services/cardsService"
 
 export const Cards = () => {
-  const [cards, setCards] = useState<ICardsProps[] | []>([])
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+
+  const [ cards, setCards ] = useState<ICardsProps[] | []>([])
   const { user } = useContext(AuthContext)
-  const { deckId } = useParams()
+  const { deckId }  = useParams()
 
   useEffect(() => {
     async function fetchCards() {
@@ -26,9 +26,6 @@ export const Cards = () => {
       } catch (error) {
         console.error("Erro ao buscar cards:", error);
       }
-      finally {
-        setIsLoading(false)
-      }
     }
 
     fetchCards();
@@ -36,16 +33,15 @@ export const Cards = () => {
 
   return (
     <>
-      <Navigation />
-      <Header />
+      <Navigation/>
+      <Header/>
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto h-screen gap-x-3 flex-wrap">
-        <Modal />
-        {isLoading ? <p>carregando...</p> : null}
-        {cards.map(card => (
-          <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
-        ))} 
+      <Modal/>
+      {cards.map(card => (
+        <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
+      ))}
       </main>
-      <Footer />
+      <Footer/>
     </>
   )
 }

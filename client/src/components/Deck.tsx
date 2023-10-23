@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IDecksProps } from "../interfaces/decksProps";
 import { FaPen, FaTrash } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -9,12 +9,11 @@ export const Deck = ({ id, name, description }: IDecksProps) => {
   const [isElementHovered, setIsElementHovered] = useState<boolean>(false);
 
   const { user } = useContext(AuthContext)
-  const { deckId } = useParams()
 
   const handleRemoveDeck = async () => {
-    if (user && deckId){
+    if (user){
         const userId = user.id
-        await removeDeck(userId, Number(deckId))
+        await removeDeck(userId, id)
     }
   };
 
@@ -36,7 +35,7 @@ export const Deck = ({ id, name, description }: IDecksProps) => {
       </Link>
 
       <div
-        className={`${isElementHovered ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}
+        className={`${isElementHovered ? "opacity-100" : "sm:opacity-0"} transition-opacity duration-500`}
       >
         <FaTrash
           onClick={handleRemoveDeck}
