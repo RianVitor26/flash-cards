@@ -35,7 +35,7 @@ export const Cards = () => {
     <>
       <Navigation/>
       <Header/>
-      <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-x-3 flex-wrap">
+      <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-3 flex-wrap">
       <Modal/>
       {cards.map(card => (
         <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />

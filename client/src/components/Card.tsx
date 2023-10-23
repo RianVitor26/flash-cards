@@ -34,8 +34,8 @@ export const Card = ({ term, translation, id }: ICardsProps) => {
         <div
             onMouseOver={() => setIsElementHovered(true)}
             onMouseLeave={() => setIsElementHovered(false)}
-            className="relative">
-            <div className={`card w-52 h-40 ${isActive ? 'flip' : ''}`} onClick={flipCardAnimation}>
+            className="relative w-full">
+            <div className={`card sm:w-52 w-full h-40 ${isActive ? 'flip' : ''}`} onClick={flipCardAnimation}>
                 <div className={`absolute front bg-gray-50 text-black p-3 rounded-md flex justify-center text-center items-center font-black shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer ${isActive ? 'hidden' : ''}`}>
                     {term}
                 </div>
@@ -48,11 +48,11 @@ export const Card = ({ term, translation, id }: ICardsProps) => {
             >
                 <FaTrash
                     onClick={handleRemoveCard}
-                    className="text-red-500 text-xl cursor-pointer absolute z-20 bottom-5 right-5 "
+                    className="text-red-500 text-xl cursor-pointer absolute z-10 bottom-5 right-5 "
                 />
                 <FaPen
                     onClick={handleEditCard}
-                    className="text-emerald-500 text-xl cursor-pointer absolute z-20 bottom-5 right-14"
+                    className="text-emerald-500 text-xl cursor-pointer absolute z-10 bottom-5 right-14"
                 />
             </div>
         </div>
