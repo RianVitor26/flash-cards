@@ -2,8 +2,9 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { FiCreditCard } from 'react-icons/fi'
 import { Plus } from './Plus'
+import { IModalProps } from '../interfaces/modalProps'
 
-export const Modal = () => {
+export const Modal = ({ modalName, firstLabel, secondLabel, firstPlaceholder, secondPlaceholder }: IModalProps) => {
   const [open, setOpen] = useState(false)
 
   const cancelButtonRef = useRef(null)
@@ -44,16 +45,16 @@ export const Modal = () => {
                       </div>
                       <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                         <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                          Crie um cartão
+                          Crie um {modalName}
                         </Dialog.Title>
                       </div>
                     </div>
                   </div>
                   <form className='flex flex-col justify-center sm:px-5 px-3'>
-                    <label className='pb-1' htmlFor="term">Termo</label>
-                    <input className='p-2' type="text" id="term" name='term' minLength={1} maxLength={50} required placeholder='Termo ou frase em inglês' />
-                    <label className='pb-1' htmlFor="translation">Tradução</label>
-                    <input className='p-2 border rounded-md' type="text" name='translation' id="translation" minLength={1} maxLength={50} required placeholder='Tradução ou sentido do termo' />
+                    <label className='pb-1' htmlFor={firstLabel}>{firstLabel}</label>
+                    <input className='p-2' type="text" id={firstLabel} name={firstLabel} minLength={1} maxLength={50} required placeholder={firstPlaceholder} />
+                    <label className='pb-1' htmlFor={secondLabel}>{secondLabel}</label>
+                    <input className='p-2 border rounded-md' type="text" name={secondLabel} id={secondLabel} minLength={1} maxLength={50} required placeholder={secondPlaceholder} />
                   </form>
                   <div className="bg-gray-50 px-4 py-2 sm:flex sm:flex-row-reverse sm:px-6">
                     <button

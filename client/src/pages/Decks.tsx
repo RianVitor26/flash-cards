@@ -6,6 +6,7 @@ import { Navigation } from "../components/Navigation"
 import { findAllDecks } from "../services/decksService"
 import { IDecksProps } from "../interfaces/decksProps"
 import { AuthContext } from "../contexts/AuthContext"
+import { Modal } from "../components/Modal"
 
 export const Decks = () => {
   const [decks, setDecks] = useState<IDecksProps[]>([]);
@@ -35,6 +36,12 @@ export const Decks = () => {
       <Navigation />
       <Header />
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-5 flex-wrap">
+      <Modal modalName="baralho"
+          firstLabel="Nome"
+          secondLabel="Descrição"
+          firstPlaceholder="Insira o nome ou o tipo do baralho"
+          secondPlaceholder="Para o que serve esse baralho" />
+
         {isLoading ? <p>carregando...</p> : null}
         {decks.map((deck) => (
           <Deck

@@ -11,9 +11,9 @@ import { findAllCards } from "../services/cardsService"
 
 export const Cards = () => {
 
-  const [ cards, setCards ] = useState<ICardsProps[] | []>([])
+  const [cards, setCards] = useState<ICardsProps[] | []>([])
   const { user } = useContext(AuthContext)
-  const { deckId }  = useParams()
+  const { deckId } = useParams()
 
   useEffect(() => {
     async function fetchCards() {
@@ -33,15 +33,20 @@ export const Cards = () => {
 
   return (
     <>
-      <Navigation/>
-      <Header/>
+      <Navigation />
+      <Header />
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-3 flex-wrap">
-      <Modal/>
-      {cards.map(card => (
-        <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
-      ))}
+        <Modal modalName="cartão"
+          firstLabel="Termo"
+          secondLabel="Tradução"
+          firstPlaceholder="Insira um termo ou uma frase"
+          secondPlaceholder="Insira a tradução ou sentido" />
+
+        {cards.map(card => (
+          <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
+        ))}
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }
