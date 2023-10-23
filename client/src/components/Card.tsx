@@ -34,7 +34,7 @@ export const Card = ({ term, translation, id }: ICardsProps) => {
         <div
             onMouseOver={() => setIsElementHovered(true)}
             onMouseLeave={() => setIsElementHovered(false)}
-            className="relative w-full">
+            className="relative w-full sm:w-fit">
             <div className={`card sm:w-52 w-full h-40 ${isActive ? 'flip' : ''}`} onClick={flipCardAnimation}>
                 <div className={`absolute front bg-gray-50 text-black p-3 rounded-md flex justify-center text-center items-center font-black shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer ${isActive ? 'hidden' : ''}`}>
                     {term}
