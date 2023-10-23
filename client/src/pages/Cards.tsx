@@ -43,7 +43,7 @@ export const Cards = () => {
         {isLoading ? <p>carregando...</p> : null}
         {cards.map(card => (
           <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
-        ))}
+        ))} 
       </main>
       <Footer />
     </>

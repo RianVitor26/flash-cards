@@ -21,9 +21,9 @@ export const Navigation = () => {
         <li>
           <Link to="/home">Início</Link>
         </li>
-        <li>
-          <Link to="/decks">Decks</Link>
-        </li>
+          <li>
+            <Link to="/decks">Decks</Link>
+          </li>
     </ul>
   );
  
