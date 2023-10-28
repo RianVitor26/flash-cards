@@ -22,17 +22,20 @@ type IAuthContextProps = {
 export const AuthContext = createContext<IAuthContextProps>({} as IAuthContextProps)
 
 export const AuthProvider = ({ children }: IAuthProviderProps) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [user, setUser] = useState<IUserProps | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const user = localStorage.getItem('user')
-        const token = localStorage.getItem('token')
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
 
         if (user && token) {
-            setUser(JSON.parse(user))
+            setUser(JSON.parse(user));
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        }   
+        }
+
+        setIsLoading(false);
     }, [])
 
     const login = async (email: string, password: string) => {
@@ -46,23 +49,24 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
                 token: data.token
             };
             setUser(user);
-            localStorage.setItem('token', JSON.stringify(data.token))
-            localStorage.setItem('user', JSON.stringify(user))
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(user));
             api.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
-            navigate("/decks")
+            console.log(data.token)
+            navigate("/decks");
         }
     };
 
     const logout = () => {
-        setUser(null)
-        localStorage.clear()
+        setUser(null);
+        localStorage.clear();
         api.defaults.headers.common['Authorization'] = null;
+        navigate('/');
     }
-
 
     return (
         <AuthContext.Provider value={{ isAuthenticated: !!user, user, login, logout }}>
-            {children}
+            {!isLoading ? children : null}
         </AuthContext.Provider>
     )
 }
