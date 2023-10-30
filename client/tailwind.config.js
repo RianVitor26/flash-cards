@@ -13,7 +13,7 @@ export default {
     extend: {
       backgroundImage: {
         'header': "url('/header.jpg')",
-        'male-profile': "url('/male_profile.svg')",
+        'profile-example': "url('/profileExample.jpg')",
       }
     }
   },
