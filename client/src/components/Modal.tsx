@@ -41,10 +41,10 @@ export const Modal = ({ modalName, firstLabel, secondLabel, firstPlaceholder, se
                   <div className="bg-white pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:justify-start sm:items-center justify-center">
                       <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 sm:mx-0 sm:h-10 sm:w-10">
-                        <FiCreditCard className="h-6 w-6 text-rose-500" />
+                        <FiCreditCard className="h-6 w-6 text-purple-500" />
                       </div>
                       <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                        <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                        <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-purple-900">
                           Crie um {modalName}
                         </Dialog.Title>
                       </div>
@@ -52,21 +52,21 @@ export const Modal = ({ modalName, firstLabel, secondLabel, firstPlaceholder, se
                   </div>
                   <form className='flex flex-col justify-center sm:px-5 px-3'>
                     <label className='pb-1' htmlFor={firstLabel}>{firstLabel}</label>
-                    <input className='p-2' type="text" id={firstLabel} name={firstLabel} minLength={1} maxLength={50} required placeholder={firstPlaceholder} />
+                    <input className='p-2 mb-2 rounded-md border outline-purple-500' type="text" id={firstLabel} name={firstLabel} minLength={1} maxLength={50} required placeholder={firstPlaceholder} />
                     <label className='pb-1' htmlFor={secondLabel}>{secondLabel}</label>
-                    <input className='p-2 border rounded-md' type="text" name={secondLabel} id={secondLabel} minLength={1} maxLength={50} required placeholder={secondPlaceholder} />
+                    <input className='p-2 rounded-md border outline-purple-500' type="text" name={secondLabel} id={secondLabel} minLength={1} maxLength={50} required placeholder={secondPlaceholder} />
                   </form>
                   <div className="bg-gray-50 px-4 py-2 sm:flex sm:flex-row-reverse sm:px-6">
                     <button
                       type="button"
-                      className="inline-flex w-full justify-center items-center rounded-md bg-emerald-500 mt-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-600 sm:ml-3 sm:w-auto"
+                      className="inline-flex w-full justify-center items-center rounded-md bg-purple-500 mt-2 px-3 py-2 transition-all duration-300 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 sm:ml-3 sm:w-auto"
                       onClick={() => setOpen(false)}
                     >
                       Criar
                     </button>
                     <button
                       type="button"
-                      className="inline-flex w-full justify-center items-center rounded-md bg-white border mt-2 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm sm:ml-3 sm:w-auto"
+                      className="inline-flex w-full justify-center items-center rounded-md bg-gray-50 hover:bg-white border mt-2 px-3 py-2 transition-all duration-300 text-sm font-semibold text-gray-900 shadow-sm sm:ml-3 sm:w-auto"
                       onClick={() => setOpen(false)}
                       ref={cancelButtonRef}
                     >

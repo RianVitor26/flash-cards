@@ -10,6 +10,7 @@ import { Cards } from "./pages/Cards";
 import { AuthProvider } from "./contexts/AuthContext";
 import { PrivateRoute } from "./utils/PrivateRoute";
 import { Home } from "./pages/Home";
+import { Profile } from "./pages/Profile";
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,16 @@ const router = createBrowserRouter([
       <AuthProvider>
         <PrivateRoute>
           <Cards />
+        </PrivateRoute>
+      </AuthProvider>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <AuthProvider>
+        <PrivateRoute>
+          <Profile />
         </PrivateRoute>
       </AuthProvider>
     ),

@@ -36,7 +36,7 @@ export const Decks = () => {
       <Navigation />
       <Header />
       <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-5 flex-wrap">
-      <Modal modalName="baralho"
+        <Modal modalName="baralho"
           firstLabel="Nome"
           secondLabel="Descrição"
           firstPlaceholder="Insira o nome ou o tipo do baralho"

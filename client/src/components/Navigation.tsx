@@ -20,9 +20,7 @@ export function Navigation() {
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-black/50 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Abrir menu principal</span>
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none">
                   {open ? (
                     <FaTimes className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -32,7 +30,7 @@ export function Navigation() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/home" className='font-black text-sky-500'>Flash Cards</Link>
+                  <Link to="/home" className='font-black text-purple-500'>Flash Cards</Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -56,15 +54,13 @@ export function Navigation() {
                   <div>
                     <Menu.Button
                       className={classNames(
-                        'relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800',
+                        'relative flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2',
                       )}
                     >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Abrir menu de usuário</span>
                       <img
                         className="h-8 w-8 rounded-full object-cover"
                         src="/profileExample.jpg"
-                        alt=""
+                        alt="Imagem de perfil"
                       />
                     </Menu.Button>
                   </div>
@@ -83,26 +79,11 @@ export function Navigation() {
                           <Link to="#">
                             {active ? (
                               <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700')}>
-                                Seu Perfil
+                                Perfil
                               </div>
                             ) : (
                               <div className="block px-4 py-2 text-sm text-gray-700">
-                                Seu Perfil
-                              </div>
-                            )}
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link to="#">
-                            {active ? (
-                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700')}>
-                                Configurações
-                              </div>
-                            ) : (
-                              <div className="block px-4 py-2 text-sm text-gray-700">
-                                Configurações
+                                Perfil
                               </div>
                             )}
                           </Link>
@@ -137,7 +118,7 @@ export function Navigation() {
                   key={item.name}
                   to={item.to}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-black/50 hover:text-black', // Alterado as cores dos links
+                    'text-gray-900 hover:bg-black/5 transition-all duration-300',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
