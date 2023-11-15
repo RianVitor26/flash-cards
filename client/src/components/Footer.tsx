@@ -19,13 +19,13 @@ export const Footer = () => {
 
     },
     project: {
-      srcCode: 'https://github.com/RianVitor26/flash-card/',
-      license: 'https://github.com/RianVitor26/flash-card/blob/main/LICENSE',
+      srcCode: 'https://github.com/RianVitor26/flash-cards/',
+      license: 'https://github.com/RianVitor26/flash-cards/blob/main/LICENSE',
     },
   } 
 
   return (
-    <footer className="max-w-4xl w-11/12 px-5 pt-5 mx-auto mt-40">
+    <footer className="max-w-4xl w-11/12 px-5 pt-5 mx-auto mt-72">
         <div className="w-full grid grid-cols-2 grid-rows-2 gap-x-3 gap-y-5 mb-20 sm:grid-cols-3 sm:grid-rows-2  md:grid-cols-4 md:grid-rows-1">
             <div className="flex flex-col gap-3 h-fit">
                 <span className="pb-4 font-bold text-gray-800">Contatos</span>
@@ -56,7 +56,7 @@ export const Footer = () => {
             <Link target="_blank" to={links.contacts.gmail} className="text-2xl text-gray-400 hover:-translate-y-1/3 hover:text-red-500 transition-all duration-500"><BiLogoGmail/></Link>
         </div>
         <div className="w-full">
-              <p className="text-gray-400 text-center py-5">2023 | Flash Cards | <Link target="_blank" to={links.integrations.github} className="hover:text-blue-600 transition-all duration-500">RianVitor26</Link></p>
+              <p className="text-gray-400 text-center py-5">2023 | Flash Cards | <Link target="_blank" to={links.integrations.github} className="hover:text-purple-500 transition-all duration-300">RianVitor26</Link></p>
         </div>
     </footer>
   )

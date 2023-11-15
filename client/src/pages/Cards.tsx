@@ -12,6 +12,7 @@ import { findAllCards } from "../services/cardsService"
 export const Cards = () => {
 
   const [cards, setCards] = useState<ICardsProps[] | []>([])
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const { user } = useContext(AuthContext)
   const { deckId } = useParams()
 
@@ -25,6 +26,8 @@ export const Cards = () => {
         }
       } catch (error) {
         console.error("Erro ao buscar cards:", error);
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -35,13 +38,14 @@ export const Cards = () => {
     <>
       <Navigation />
       <Header />
-      <main className="w-11/12 flex justify-center sm:justify-start mx-auto gap-3 flex-wrap">
+      <main className="relative w-11/12 flex justify-center sm:justify-start mx-auto gap-3 flex-wrap">
         <Modal modalName="cartão"
           firstLabel="Termo"
           secondLabel="Tradução"
           firstPlaceholder="Insira um termo ou uma frase"
           secondPlaceholder="Insira a tradução ou sentido" />
-
+        {isLoading ? <p>Carregando...</p> : null}
+        {cards.length === 0 ? <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black/50 font-bold text-xl">Crie o seu primeiro cartão</p> : null}
         {cards.map(card => (
           <Card key={card.id} id={card.id} term={card.term} translation={card.translation} />
         ))}
