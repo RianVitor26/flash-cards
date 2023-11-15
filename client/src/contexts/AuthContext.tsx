@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { IUserProps } from "../interfaces/userProps";
+import { IUserProps } from "../interfaces/loginProps";
 import { useNavigate } from "react-router-dom";
 import { createSession } from "../services/usersServices";
 import { api } from "../services/config";

@@ -9,7 +9,14 @@ import { AuthContext } from "../contexts/AuthContext"
 import { Modal } from "../components/Modal"
 
 export const Decks = () => {
-  const [decks, setDecks] = useState<IDecksProps[]>([]);
+  const [decks, setDecks] = useState<IDecksProps[]>([
+    {
+      id: 1,
+      name: 'English',
+      description: 'Deck para aprender inglês',
+      category: 'Verbos'
+    }
+  ]);
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const { user } = useContext(AuthContext)
@@ -43,6 +50,7 @@ export const Decks = () => {
           secondPlaceholder="Para o que serve esse baralho" />
 
         {isLoading ? <p>carregando...</p> : null}
+        {decks.length === 0 ? <p className="text-black/50 font-bold text-xl">Crie o seu primeiro baralho</p>: null}
         {decks.map((deck) => (
           <Deck
             key={deck.id}

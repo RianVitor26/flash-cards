@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Removido o ícone do sino
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -14,7 +14,7 @@ function classNames(...classes: (string | undefined)[]) {
 
 export function Navigation() {
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className="bg-white shadow-md sticky top-0 left-0 z-30">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export function Navigation() {
                         key={item.name}
                         to={item.to}
                         className={classNames(
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          'rounded-md px-3 py-2 text-sm font-bold hover:text-purple-500 transition-all duration-300'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -78,7 +78,7 @@ export function Navigation() {
                         {({ active }) => (
                           <Link to="#">
                             {active ? (
-                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700')}>
+                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-purple-500 transition-all duration-300')}>
                                 Perfil
                               </div>
                             ) : (
@@ -93,7 +93,7 @@ export function Navigation() {
                         {({ active }) => (
                           <Link to="#">
                             {active ? (
-                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700')}>
+                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-purple-500 transition-all duration-300')}>
                                 Sair
                               </div>
                             ) : (

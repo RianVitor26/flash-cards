@@ -8,7 +8,7 @@ import { SignUp } from "./pages/SignUp";
 import { Decks } from "./pages/Decks";
 import { Cards } from "./pages/Cards";
 import { AuthProvider } from "./contexts/AuthContext";
-import { PrivateRoute } from "./utils/PrivateRoute";
+// import { PrivateRoute } from "./utils/PrivateRoute";
 import { Home } from "./pages/Home";
 import { Profile } from "./pages/Profile";
 
@@ -25,18 +25,18 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: (
-      <AuthProvider>
+      // <AuthProvider>
         <Home />
-      </AuthProvider>
+      // </AuthProvider>
     ),
   },
   {
     path: "/decks",
     element: (
       <AuthProvider>
-        <PrivateRoute>
+        {/* <PrivateRoute> */}
           <Decks />
-        </PrivateRoute>
+        {/* </PrivateRoute> */}
       </AuthProvider>
     ),
   },
@@ -52,9 +52,9 @@ const router = createBrowserRouter([
     path: "/decks/:deckId/cards",
     element: (
       <AuthProvider>
-        <PrivateRoute>
+        {/* <PrivateRoute> */}
           <Cards />
-        </PrivateRoute>
+        {/* </PrivateRoute> */}
       </AuthProvider>
     ),
   },
@@ -62,9 +62,9 @@ const router = createBrowserRouter([
     path: "/profile",
     element: (
       <AuthProvider>
-        <PrivateRoute>
+        {/* <PrivateRoute> */}
           <Profile />
-        </PrivateRoute>
+        {/* </PrivateRoute> */}
       </AuthProvider>
     ),
   },

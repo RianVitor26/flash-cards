@@ -1,4 +1,4 @@
-import { IUserProps } from '../interfaces/userProps'
+import { IUserProps } from '../interfaces/loginProps'
 import { api } from './config';
 
 export const createSession = async (email: string, password: string) => {

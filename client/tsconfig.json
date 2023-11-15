@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/interfaces/userProps.tsx"],
+  "include": ["src", "src/interfaces/loginProps.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
