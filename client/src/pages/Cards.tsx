@@ -8,10 +8,17 @@ import { AuthContext } from "../contexts/AuthContext"
 import { ICardsProps } from "../interfaces/cardsProps"
 import { findAllCards } from "../services/cardsService"
 import { Menu } from "../components/Menu"
+import { Card } from "../components/Card"
 
 export const Cards = () => {
 
-  const [cards, setCards] = useState<ICardsProps[] | []>([])
+  const [cards, setCards] = useState<ICardsProps[] | []>([
+    {
+      id: 1,
+      term: 'ball',
+      translation: 'bola'
+    }
+  ])
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const { user } = useContext(AuthContext)
   const { deckId } = useParams()
@@ -47,7 +54,9 @@ export const Cards = () => {
         {isLoading ? <p>Carregando...</p> : null}
         {cards.length === 0 ? <p className="text-black/50 font-bold text-xl text-center">Crie o seu primeiro cartão</p> : null}
         <Menu>
-          <p>CARD AQUI</p>
+        {cards.map(card => (
+            <Card key={card.id} id={card.id} term={card.term} translation={card.translation}/>
+          ))}
         </Menu>
       </main>
       <Footer />
