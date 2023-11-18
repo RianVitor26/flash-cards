@@ -45,7 +45,7 @@ export const Cards = () => {
     <>
       <Navigation />
       <Header />
-      <main className="relative w-11/12 flex justify-center items-center sm:justify-start mx-auto gap-3 flex-wrap">
+      <main className="relative w-11/12 flex justify-center items-center sm:justify-start mx-auto gap-5 flex-wrap sm:flex-nowrap">
         <Modal modalName="cartão"
           firstLabel="Termo"
           secondLabel="Tradução"
