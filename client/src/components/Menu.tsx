@@ -2,11 +2,13 @@ import { ReactNode } from "react";
 
 interface IMenuProps {
     children: ReactNode;
+    cardsSize: number;
 }
 
-export const Menu = ({children}: IMenuProps) => {
+export const Menu = ({children, cardsSize}: IMenuProps) => {
     return (
         <div className="relative w-full max-w-2xl mx-auto h-96 bg-gray-100 rounded-md shadow-md border px-5">
+            <span className="absolute top-3 left-1/2 -translate-x-1/2 font-bold text-gray-800">Quantidade de cartões: {cardsSize}</span>
             <div className="w-full h-full flex justify-center items-center">
                 {children}
             </div>

@@ -17,7 +17,7 @@ export const Cards = () => {
       id: 1,
       term: 'ball',
       translation: 'bola'
-    }
+    },
   ])
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const { user } = useContext(AuthContext)
@@ -53,7 +53,7 @@ export const Cards = () => {
           secondPlaceholder="Insira a tradução ou sentido" />
         {isLoading ? <p>Carregando...</p> : null}
         {cards.length === 0 ? <p className="text-black/50 font-bold text-xl text-center">Crie o seu primeiro cartão</p> : null}
-        <Menu>
+        <Menu cardsSize={cards.length}>
         {cards.map(card => (
             <Card key={card.id} id={card.id} term={card.term} translation={card.translation}/>
           ))}
