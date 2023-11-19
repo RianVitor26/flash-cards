@@ -18,7 +18,7 @@ export const SignIn = () => {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <span className="text-center text-2xl text-purple-600 font-black">Entrar</span>
+          <span className="text-center text-2xl text-blue-600 font-black">Entrar</span>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -37,7 +37,7 @@ export const SignIn = () => {
                   autoComplete="email"
                   placeholder="Insira um email válido"
                   required
-                  className="block w-full rounded-md border py-1.5 px-2 text-gray-900 shadow-sm outline-purple-500 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 px-2 text-gray-900 shadow-sm outline-blue-500 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -48,7 +48,7 @@ export const SignIn = () => {
                   Senha
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-purple-600 hover:text-purple-600">
+                  <a href="#" className="font-semibold text-blue-600 hover:text-blue-600">
                     Esqueçeu a senha?
                   </a>
                 </div>
@@ -62,7 +62,7 @@ export const SignIn = () => {
                   autoComplete="current-password"
                   placeholder="Insira uma senha válida"
                   required
-                  className="block w-full rounded-md border outline-purple-500 py-1.5 px-2 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border outline-blue-500 py-1.5 px-2 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -70,7 +70,7 @@ export const SignIn = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-purple-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-600 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="flex w-full justify-center rounded-md bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 Entrar
               </button>
@@ -79,7 +79,7 @@ export const SignIn = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Não possui uma conta?{' '}
-            <Link to="/signup" className="font-semibold leading-6 text-purple-600 hover:text-purple-600">
+            <Link to="/signup" className="font-semibold leading-6 text-blue-600 hover:text-blue-600">
               Cadastre-se aqui
             </Link>
           </p>

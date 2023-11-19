@@ -56,7 +56,7 @@ export const Footer = () => {
             <Link target="_blank" to={links.contacts.gmail} className="text-2xl text-gray-400 hover:-translate-y-1/3 hover:text-red-500 transition-all duration-500"><BiLogoGmail/></Link>
         </div>
         <div className="w-full">
-              <p className="text-gray-400 text-center py-5">2023 | Flash Cards | <Link target="_blank" to={links.integrations.github} className="hover:text-purple-500 transition-all duration-300">RianVitor26</Link></p>
+              <p className="text-gray-400 text-center py-5">2023 | Flash Cards | <Link target="_blank" to={links.integrations.github} className="hover:text-blue-500 transition-all duration-300">RianVitor26</Link></p>
         </div>
     </footer>
   )

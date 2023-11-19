@@ -7,7 +7,7 @@ interface PlusProps {
 
 export const Plus: React.FC<PlusProps> = ({ action }) => {
   return (
-    <div onClick={action} className="w-80 h-40 flex justify-center items-center text-7xl text-purple-500 rounded-md  border-dotted border border-purple-600 cursor-pointer hover:text-purple-400 transition-all duration-500 bg-purple-500/10">
+    <div onClick={action} className="w-80 h-40 flex justify-center items-center text-7xl text-blue-500 rounded-md  border-dotted border border-blue-600 cursor-pointer hover:text-blue-400 transition-all duration-500 bg-blue-500/10">
       <AiOutlinePlusCircle/>  
     </div>
   );

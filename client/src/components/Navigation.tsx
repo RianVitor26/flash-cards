@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -13,8 +13,18 @@ function classNames(...classes: (string | undefined)[]) {
 }
 
 export function Navigation() {
+
+
+  const scroll = useRef(null)
+  const getScroll = () => {
+    console.log(scroll)
+  } 
+
+  useEffect(() => {
+    getScroll()
+  }, [])
   return (
-    <Disclosure as="nav" className="bg-white shadow-md sticky top-0 left-0 z-30">
+    <Disclosure ref={scroll} as="nav" className="bg-white shadow-md sticky top-0 left-0 z-30">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -30,7 +40,7 @@ export function Navigation() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/home" className='font-black text-purple-500'>Flash Cards</Link>
+                  <Link to="/home" className='font-black text-blue-500'>Flash Cards</Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -39,7 +49,7 @@ export function Navigation() {
                         key={item.name}
                         to={item.to}
                         className={classNames(
-                          'rounded-md px-3 py-2 text-sm font-bold hover:text-purple-500 transition-all duration-300'
+                          'rounded-md px-3 py-2 text-sm font-bold hover:text-blue-500 transition-all duration-300'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -78,7 +88,7 @@ export function Navigation() {
                         {({ active }) => (
                           <Link to="/profile">
                             {active ? (
-                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-purple-500 transition-all duration-300')}>
+                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-blue-500 transition-all duration-300')}>
                                 Perfil
                               </div>
                             ) : (
@@ -93,7 +103,7 @@ export function Navigation() {
                         {({ active }) => (
                           <Link to="#">
                             {active ? (
-                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-purple-500 transition-all duration-300')}>
+                              <div className={classNames('bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:text-blue-500 transition-all duration-300')}>
                                 Sair
                               </div>
                             ) : (

@@ -13,7 +13,7 @@ export const Menu = ({children, cardsSize}: IMenuProps) => {
                 {children}
             </div>
             <div className="absolute bottom-0 left-0 p-5 w-full flex justify-center gap-x-5">
-                <button className="bg-purple-500 p-2 border rounded-md shadow-md text-gray-100 font-black hover:bg-purple-600 transition-all duration-300">Memorizei</button>
+                <button className="bg-blue-500 p-2 border rounded-md shadow-md text-gray-100 font-black hover:bg-blue-600 transition-all duration-300">Memorizei</button>
                 <button className="bg-gray-100 p-2 border rounded-md shadow-md text-gray-900 font-black hover:bg-gray-200 transition-all duration-300">Revisar mais</button>
             </div>
         </div>
