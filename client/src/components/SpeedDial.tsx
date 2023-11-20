@@ -23,7 +23,7 @@ export const SpeedDialWithTextOutside = () => {
 
     const labelProps = {
         className:
-            "absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-bold text-gray-900 bg-blue-100 p-2 rounded-s-xl",
+            "absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-bold text-gray-900 p-2 rounded-s-xl",
     };
 
     return (
