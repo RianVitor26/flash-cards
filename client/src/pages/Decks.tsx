@@ -7,6 +7,7 @@ import { findAllDecks } from "../services/decksService"
 import { IDecksProps } from "../interfaces/decksProps"
 import { AuthContext } from "../contexts/AuthContext"
 import { Modal } from "../components/Modal"
+import { SpeedDialWithTextOutside } from "../components/SpeedDial"
 
 export const Decks = () => {
   const [decks, setDecks] = useState<IDecksProps[]>([]);
@@ -52,7 +53,9 @@ export const Decks = () => {
             description={deck.description}
           />
         ))}
+        <SpeedDialWithTextOutside/>
       </main>
+      
       <Footer />
     </>
   );

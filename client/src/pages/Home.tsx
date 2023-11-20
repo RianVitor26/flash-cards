@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Footer } from "../components/Footer"
 import { Navigation } from "../components/Navigation"
+import { SpeedDialWithTextOutside } from "../components/SpeedDial"
 
 export const Home = () => {
   return (
@@ -18,6 +19,7 @@ export const Home = () => {
           <img className="w-full h-full object-contain" src="./home.svg" alt="Imagem do undraw de uma pessoa e um coração" />
         </div>
       </header>
+      <SpeedDialWithTextOutside/>
       <Footer />
     </>
   )
